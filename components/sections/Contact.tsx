@@ -36,11 +36,11 @@ export default function Contact() {
       return;
     }
 
-    // Check if captcha is verified
-    if (!captchaToken) {
-      setStatus('captcha-required');
-      return;
-    }
+    // TEMPORARILY DISABLED: Check if captcha is verified
+    // if (!captchaToken) {
+    //   setStatus('captcha-required');
+    //   return;
+    // }
 
     // Validate API key exists
     if (!process.env.NEXT_PUBLIC_WEB3FORMS_KEY) {
@@ -77,7 +77,7 @@ export default function Contact() {
         message: sanitizedMessage,
         subject: `New Contact Form Submission from ${sanitizedName}`,
         from_name: sanitizedName,
-        hcaptcha: captchaToken,
+        // TEMPORARILY REMOVED: hcaptcha: captchaToken,
       };
       
       console.log('Sending to Web3Forms:', {
@@ -283,7 +283,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={status === 'sending' || !captchaToken}
+                  disabled={status === 'sending'}
                   className="w-full px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-semibold hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)' }}
                 >
@@ -291,12 +291,13 @@ export default function Contact() {
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
 
-                {!captchaToken && status !== 'sending' && status !== 'success' && (
+                {/* TEMPORARILY DISABLED CAPTCHA WARNING */}
+                {/* {!captchaToken && status !== 'sending' && status !== 'success' && (
                   <p className="text-sm text-gray-600 text-center flex items-center justify-center gap-2">
                     <Shield size={16} />
                     Please complete the captcha to send your message
                   </p>
-                )}
+                )} */}
 
                 {status === 'success' && (
                   <motion.div
