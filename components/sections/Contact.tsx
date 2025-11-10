@@ -97,6 +97,13 @@ export default function Contact() {
       });
 
       const result = await response.json();
+      
+      console.log('Web3Forms response:', {
+        status: response.status,
+        success: result.success,
+        message: result.message,
+        error: result.error
+      });
 
       if (result.success) {
         setStatus('success');
@@ -106,11 +113,13 @@ export default function Contact() {
         // Auto-clear success message after 5 seconds
         setTimeout(() => setStatus(''), 5000);
       } else {
+        console.error('Web3Forms error:', result);
         setStatus('error');
         captchaRef.current?.resetCaptcha();
         setCaptchaToken(null);
       }
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setStatus('error');
       captchaRef.current?.resetCaptcha();
       setCaptchaToken(null);
