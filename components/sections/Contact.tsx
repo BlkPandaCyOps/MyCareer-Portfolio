@@ -82,7 +82,8 @@ export default function Contact() {
           email: sanitizedEmail,
           message: sanitizedMessage,
           subject: `New Contact Form Submission from ${sanitizedName}`,
-          'h-captcha-response': captchaToken,
+          from_name: sanitizedName,
+          hcaptcha: captchaToken,
         }),
       });
 
