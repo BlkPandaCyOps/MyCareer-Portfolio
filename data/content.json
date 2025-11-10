@@ -1,0 +1,167 @@
+{
+  "personal": {
+    "name": "Michael Oyesola",
+    "fullName": "Olusoji Oyesola",
+    "tagline": "Junior Service Delivery Manager | Aspirng Cybersecurity Professional also exploring Web & App Development",
+    "bio": {
+      "intro": "I'm a passionate and experienced IT professional with a deep focus on technology, cybersecurity, and creating solutions that make a difference. I bridge the gap between complex technical challenges and real-world business needs.",
+      "focus": [
+        {
+          "title": "Driving Innovation & User Experience",
+          "description": "Delivering practical, innovative IT solutions that enhance user satisfaction and align with business objectives."
+        },
+        {
+          "title": "Strengthening Security & Performance",
+          "description": "Applying a security-first mindset to system design and support, with experience across government and commercial sectors."
+        },
+        {
+          "title": "Solving Complex Problems",
+          "description": "Thriving on challenges in software development and system security to build robust and effective solutions."
+        }
+      ],
+      "approach": "I am a collaborative and self-motivated professional, committed to continuous learning. I'm currently advancing my skills through hands-on cybersecurity projects and certifications. When I'm not at my desk, I'm applying the same discipline and motivation to my love for sports and personal growth.",
+      "closing": "I am actively seeking opportunities to grow professionally and help strengthen your organization's IT capabilities."
+    },
+    "email": "sojioye93@yahoo.co.uk",
+    "location": "Liverpool, UK",
+    "avatar": "/images/avatar.png",
+    "resume": "/files/Olusoji Oyesola Resume.pdf"
+  },
+  "social": {
+    "github": "https://github.com/BlkPandaCyOps",
+    "linkedin": "https://linkedin.com/in/moyesola",
+    "twitter": "https://x.com/BlkPandaCyOps"
+  },
+  "experience": [
+    {
+      "id": 1,
+      "title": "Service Delivery Manager (HMRC)",
+      "company": "Atos",
+      "location": "London, England, UK",
+      "period": "October 2023 - Present",
+      "description": "SC Cleared. Managing daily operations of test environments for HMRC, ensuring high availability, reliability, and SLA compliance. Overseeing change control and incident handling, coordinating cross-functional teams for rapid resolution. Producing service delivery reports and testing performance metrics aligned with contractual and regulatory requirements. Chairing service reviews and improvement initiatives, advising stakeholders on testing performance, risk, and service enhancements. Streamlining reporting and process automation using Microsoft Power Platform. Leading monthly security calls, coordinating patching, vulnerability remediation, and configuration changes.",
+      "skills": ["Service Delivery", "SLA Management", "Change Control", "Incident Management", "Power Platform", "Security Compliance", "Stakeholder Management"]
+    },
+    {
+      "id": 2,
+      "title": "Application Support Engineer & SME (MET Police)",
+      "company": "Atos",
+      "location": "London, England, UK",
+      "period": "January 2022 - October 2023",
+      "description": "SC Cleared. Provided seamless 2LS & 3LS support for existing applications and solutions within MET Police internal systems. Conducted root cause analysis and implemented corrective actions to prevent incident recurrence. Facilitated knowledge transfer and onboarding for new staff members. Documented troubleshooting steps and resolution procedures for complex incidents. Collaborated with cross-functional teams to support deployments, updates, and process automation initiatives. Supported systems in both Windows and Linux environments, ensuring high availability and performance.",
+      "skills": ["Application Support", "Root Cause Analysis", "Windows & Linux", "Knowledge Transfer", "Process Automation", "Incident Resolution", "Cross-functional Collaboration"]
+    },
+    {
+      "id": 3,
+      "title": "Service Desk and Application Support Analyst",
+      "company": "The White Company",
+      "location": "Northampton, England, UK",
+      "period": "October 2018 - January 2022",
+      "description": "Resolved client support tickets across hardware, applications, and network issues for over 1000+ users. Managed and documented incidents in ServiceNow and Freshservice, ensuring timely resolution and escalation. Delivered technical troubleshooting and root cause analysis to minimize recurring incidents. Collaborated with teams to maintain and update the support knowledge base. Provided training and mentorship to colleagues. Supported SAP Hybris, Microsoft Dynamics NAV, K3, and Manhattan SCALE platforms. Conducted SQL scripting, XML editing, and system monitoring to support integrations and transactions.",
+      "skills": ["Service Desk", "ServiceNow", "Freshservice", "SAP Hybris", "Microsoft Dynamics NAV", "SQL Scripting", "Technical Support", "Training & Mentorship"]
+    },
+    {
+      "id": 4,
+      "title": "IT Support Engineer",
+      "company": "University of Northampton",
+      "location": "Northampton, England, UK",
+      "period": "April 2018 - October 2018",
+      "description": "",
+      "skills": ["IT Support", "Technical Troubleshooting", "Hardware Support", "Software Support", "User Support"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Portfolio Website",
+      "description": "Personal portfolio built with Next.js and Tailwind CSS",
+      "image": "/images/projects/portfolio.jpg",
+      "category": "Web Dev",
+      "tags": ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+      "github": "https://github.com/mikeoyesola/portfolio",
+      "demo": "https://mikeoyesola.com"
+    },
+    {
+      "id": 2,
+      "title": "Home Hacking Lab",
+      "description": "Turning my home setup into a hands-on CyberSec playground",
+      "image": "/images/projects/security-dashboard.jpg",
+      "category": "Cyber",
+      "tags": ["Security", "Networking", "Pen Testing", "Lab Setup", "Vulnerability Management"],
+      "github": "https://github.com/BlkPandaCyOps/HomeHackingLab",
+      "demo": null
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "The University of Northampton",
+      "degree": "Bachelor of Science (B.Sc.) in Computer Science (Mobile Computing)",
+      "period": "2018",
+      "grade": "Second Class Upper",
+      "location": "Northampton, England, UK",
+      "modules": ["Mobile Computing", "Media Technology", "Cybersecurity and Cryptography", "Wireless and Advanced Network Technology"]
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "Azure Fundamentals Certified",
+      "issuer": "Microsoft",
+      "year": "2022",
+      "badgeUrl": "https://www.credly.com/badges/ab23d351-3143-4482-9fe7-aac8917efb52/public_url"
+    },
+    {
+      "id": 2,
+      "name": "Cybersecurity Virtual Experience Programs (Mastercard & AIG Shields Up)",
+      "issuer": "Forage",
+      "year": "2023"
+    },
+    {
+      "id": 4,
+      "name": "Cybersecurity Specialist Bootcamp",
+      "issuer": "Tritek Academy",
+      "year": "2024"
+    },
+    {
+      "id": 5,
+      "name": "Introduction to Vulnerability Management",
+      "issuer": "Security Blue Team",
+      "year": "2024"
+    },
+    {
+      "id": 6,
+      "name": "ITIL Foundation Internal Training",
+      "issuer": "Percipio (Atos)",
+      "year": "2024"
+    },
+    {
+      "id": 7,
+      "name": "Introduction to Cybersecurity",
+      "issuer": "Cisco",
+      "year": "2024",
+      "badgeUrl": "https://www.credly.com/badges/7deff6ab-253e-46e2-8f3e-47f44e8f049c/public_url"
+    },
+    {
+      "id": 8,
+      "name": "Introduction to Cybersecurity",
+      "issuer": "Percipio (Atos)",
+      "year": "2025"
+    }
+  ],
+  "interests": {
+    "sports": [
+      { "name": "Football", "icon": "⚽" },
+      { "name": "Athletics", "icon": "🏃" },
+      { "name": "Basketball", "icon": "🏀" },
+      { "name": "Table Tennis", "icon": "🏓" }
+    ],
+    "professional": [
+      { "name": "Technology", "icon": "💻" },
+      { "name": "Innovation", "icon": "💡" },
+      { "name": "Continuous Learning", "icon": "📚" },
+      { "name": "Cybersecurity", "icon": "🔒" },
+      { "name": "Web Development", "icon": "🌐" }
+    ]
+  }
+}
