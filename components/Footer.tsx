@@ -13,7 +13,7 @@ export default function Footer() {
               © {currentYear} {content.personal.name}. All rights reserved.
             </p>
             <a
-              href="https://github.com/mikeoyesola/mike-portfolio"
+              href="https://github.com/BlkPandaCyOps/MyCareer-Portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-primary-600 hover:underline"
