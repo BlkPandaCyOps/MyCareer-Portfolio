@@ -1,9 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
-import { MapPin, Send, CheckCircle, AlertCircle, Shield } from 'lucide-react';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { useState } from 'react';
+import { MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import content from '@/data/content.json';
 import { sanitizeInput, isValidEmail } from '@/lib/env';
 
@@ -14,17 +13,7 @@ export default function Contact() {
     message: '',
   });
   const [status, setStatus] = useState('');
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [honeypot, setHoneypot] = useState(''); // Bot detection
-  const captchaRef = useRef<HCaptcha>(null);
-
-  const handleCaptchaVerify = (token: string) => {
-    setCaptchaToken(token);
-  };
-
-  const handleCaptchaExpire = () => {
-    setCaptchaToken(null);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,12 +24,6 @@ export default function Contact() {
       setStatus('success'); // Fake success to fool bots
       return;
     }
-
-    // TEMPORARILY DISABLED: Check if captcha is verified
-    // if (!captchaToken) {
-    //   setStatus('captcha-required');
-    //   return;
-    // }
 
     // Validate API key exists
     if (!process.env.NEXT_PUBLIC_WEB3FORMS_KEY) {
@@ -82,8 +65,7 @@ export default function Contact() {
       
       console.log('Sending to Web3Forms:', {
         ...payload,
-        access_key: payload.access_key ? '***' + payload.access_key.slice(-4) : 'MISSING',
-        hcaptcha: captchaToken ? 'present' : 'missing'
+        access_key: payload.access_key ? '***' + payload.access_key.slice(-4) : 'MISSING'
       });
 
       // Using Web3Forms - Get your access key from https://web3forms.com
@@ -108,21 +90,15 @@ export default function Contact() {
       if (result.success) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
-        setCaptchaToken(null);
-        captchaRef.current?.resetCaptcha();
         // Auto-clear success message after 5 seconds
         setTimeout(() => setStatus(''), 5000);
       } else {
         console.error('Web3Forms error:', result);
         setStatus('error');
-        captchaRef.current?.resetCaptcha();
-        setCaptchaToken(null);
       }
     } catch (error) {
       console.error('Form submission error:', error);
       setStatus('error');
-      captchaRef.current?.resetCaptcha();
-      setCaptchaToken(null);
     }
   };
 
@@ -264,22 +240,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {/* hCaptcha */}
-                <div className="flex justify-center">
-                  {process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ? (
-                    <HCaptcha
-                      ref={captchaRef}
-                      sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-                      onVerify={handleCaptchaVerify}
-                      onExpire={handleCaptchaExpire}
-                      theme="light"
-                    />
-                  ) : (
-                    <div className="text-red-600 text-sm p-3 bg-red-50 rounded-lg">
-                      ⚠️ hCaptcha not configured. Please add NEXT_PUBLIC_HCAPTCHA_SITE_KEY to environment variables.
-                    </div>
-                  )}
-                </div>
+                {/* hCaptcha removed for testing */}
 
                 <button
                   type="submit"
@@ -291,13 +252,7 @@ export default function Contact() {
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
 
-                {/* TEMPORARILY DISABLED CAPTCHA WARNING */}
-                {/* {!captchaToken && status !== 'sending' && status !== 'success' && (
-                  <p className="text-sm text-gray-600 text-center flex items-center justify-center gap-2">
-                    <Shield size={16} />
-                    Please complete the captcha to send your message
-                  </p>
-                )} */}
+
 
                 {status === 'success' && (
                   <motion.div
@@ -319,16 +274,7 @@ export default function Contact() {
                     <span className="font-medium">Failed to send message. Please try again or reach out via LinkedIn.</span>
                   </motion.div>
                 )}
-                {status === 'captcha-required' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center justify-center gap-2 text-amber-600 bg-amber-50 p-3 rounded-lg"
-                  >
-                    <Shield size={20} />
-                    <span className="font-medium">Please complete the captcha verification first.</span>
-                  </motion.div>
-                )}
+
                 {status === 'invalid-email' && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
