@@ -69,6 +69,23 @@ export default function Contact() {
     setStatus('sending');
 
     try {
+      // Debug: Log the payload (remove in production)
+      const payload = {
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+        name: sanitizedName,
+        email: sanitizedEmail,
+        message: sanitizedMessage,
+        subject: `New Contact Form Submission from ${sanitizedName}`,
+        from_name: sanitizedName,
+        hcaptcha: captchaToken,
+      };
+      
+      console.log('Sending to Web3Forms:', {
+        ...payload,
+        access_key: payload.access_key ? '***' + payload.access_key.slice(-4) : 'MISSING',
+        hcaptcha: captchaToken ? 'present' : 'missing'
+      });
+
       // Using Web3Forms - Get your access key from https://web3forms.com
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -76,15 +93,7 @@ export default function Contact() {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-          name: sanitizedName,
-          email: sanitizedEmail,
-          message: sanitizedMessage,
-          subject: `New Contact Form Submission from ${sanitizedName}`,
-          from_name: sanitizedName,
-          hcaptcha: captchaToken,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
