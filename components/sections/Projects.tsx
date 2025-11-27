@@ -78,9 +78,19 @@ export default function Projects() {
                     boxShadow: `0 0 20px ${shadowColor}, 0 4px 15px ${shadowColor}`,
                   }}
                 >
-                  <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                    <span className="text-6xl">💻</span>
-                  </div>
+                  {project.image ? (
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                      <span className="text-6xl">💻</span>
+                    </div>
+                  )}
                 
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
