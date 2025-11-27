@@ -88,14 +88,14 @@
       "image": "/images/projects/eventhub.png",
       "category": "Web Dev",
       "tags": ["Next.js", "TypeScript", "React", "PostgreSQL", "Prisma", "NextAuth", "Tailwind CSS", "Framer Motion"],
-      "github": "https://github.com/BlkPandaCyOps/EventHub",
+      "github": null,
       "demo": "https://eventhub-planner.vercel.app"
     },
     {
       "id": 3,
       "title": "Home Hacking Lab",
       "description": "Turning my home setup into a hands-on CyberSec playground",
-      "image": "/images/projects/security-dashboard.jpg",
+      "image": "/images/projects/lab.png",
       "category": "Cyber",
       "tags": ["Security", "Networking", "Pen Testing", "Lab Setup", "Vulnerability Management"],
       "github": "https://github.com/BlkPandaCyOps/HomeHackingLab",
